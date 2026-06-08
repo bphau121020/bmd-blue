@@ -439,12 +439,22 @@
 @media print, (min-width: 768px) {
   .footer-bottom {
     position: absolute;
-    left: 0;
-    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0.18rem;
     width: 100%;
     font-size: 0.18rem;
+    max-width: 16.8rem;
+    margin: 0 auto;
   }
 }
+@media print, (min-width: 768px) {
+  .footer-policy {
+    display: flex;
+    gap: 0.2rem;
+  }
+}
+
 .section-top-journey .journey-heading {
   font-weight: 500;
   color: #F5F1E8;

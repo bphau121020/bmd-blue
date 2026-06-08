@@ -434,7 +434,6 @@
   }
 
   @include desktop {
-
     .information-content {
       font-size: 0.18rem;
       line-height: calc(25 / 18);
@@ -553,13 +552,23 @@
 
   @include desktop {
     position: absolute;
-    left: 0;
-    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0.18rem;
     width: 100%;
     font-size: 0.18rem;
+    max-width: 16.8rem;
+    margin: 0 auto;
   }
 
   @include mobile {}
+}
+
+.footer-policy {
+  @include desktop {
+    display: flex;
+    gap: 0.2rem;
+  }
 }
 
 .section-top-journey {
