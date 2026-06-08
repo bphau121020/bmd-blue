@@ -1,0 +1,80 @@
+@charset "utf-8";
+@use "../../_base/base" as *;
+
+.button-common-primary {
+    position: relative;
+    border: 1px solid #C6A45A;
+    background-color: #C6A45A;
+    color: #0B1F3A;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 99999px;
+    width: auto;
+    line-height: 1.2;
+    letter-spacing: -0.05em;
+
+    &::after {
+        background-color: #0B1F3A;
+        content: "";
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-mask: url(../resources/images/common/icon_arrow_01.svg) 50% 50%/contain no-repeat;
+        mask: url(../resources/images/common/icon_arrow_01.svg) 50% 50%/contain no-repeat;
+        -webkit-transition: margin-right 0.5s ease-in-out;
+        transition: margin-right 0.5s ease-in-out;
+    }
+
+    &:hover {
+        &::after {
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+            -webkit-animation-name: movelr;
+            animation-name: movelr;
+            -webkit-animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
+            animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
+        }
+    }
+
+    span {
+        display: inline-block;
+        line-height: 1.2;
+    }
+
+    @include desktop {
+        min-height: 0.5rem;
+        font-size: 0.2rem;
+        padding: 0.1rem 0.6rem 0.1rem 0.24rem;
+        min-width: 1.85rem;
+
+        &::after {
+            width: 0.31rem;
+            height: 0.18rem;
+            margin-right: 0.24rem;
+        }
+
+        span {}
+    }
+
+    @include mobile {
+        min-height: 0.4rem;
+        font-size: 0.16rem;
+        line-height: 1.625;
+        padding: 0.1rem 0.7rem 0.04rem 0.4rem;
+
+        &::after {
+            width: 0.26rem;
+            height: 0.18rem;
+            margin-right: 0.2rem;
+        }
+    }
+}

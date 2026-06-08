@@ -1729,6 +1729,70 @@ html.is-touchable .trans:hover {
   }
 }
 
+.button-common-primary {
+  position: relative;
+  border: 1px solid #C6A45A;
+  background-color: #C6A45A;
+  color: #0B1F3A;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 99999px;
+  width: auto;
+  line-height: 1.2;
+  letter-spacing: -0.05em;
+}
+.button-common-primary::after {
+  background-color: #0B1F3A;
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-mask: url(../resources/images/common/icon_arrow_01.svg) 50% 50%/contain no-repeat;
+  mask: url(../resources/images/common/icon_arrow_01.svg) 50% 50%/contain no-repeat;
+  transition: margin-right 0.5s ease-in-out;
+}
+.button-common-primary:hover::after {
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-name: movelr;
+  animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
+}
+.button-common-primary span {
+  display: inline-block;
+  line-height: 1.2;
+}
+@media print, (min-width: 768px) {
+  .button-common-primary {
+    min-height: 0.5rem;
+    font-size: 0.2rem;
+    padding: 0.1rem 0.6rem 0.1rem 0.24rem;
+    min-width: 1.85rem;
+  }
+  .button-common-primary::after {
+    width: 0.31rem;
+    height: 0.18rem;
+    margin-right: 0.24rem;
+  }
+}
+@media only screen and (max-width: 767.98px) {
+  .button-common-primary {
+    min-height: 0.4rem;
+    font-size: 0.16rem;
+    line-height: 1.625;
+    padding: 0.1rem 0.7rem 0.04rem 0.4rem;
+  }
+  .button-common-primary::after {
+    width: 0.26rem;
+    height: 0.18rem;
+    margin-right: 0.2rem;
+  }
+}
+
 section .title-main {
   position: relative;
   font-family: "MTD Starcity Script", sans-serif;
