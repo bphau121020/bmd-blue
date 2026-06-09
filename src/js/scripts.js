@@ -2141,6 +2141,27 @@
     });
   };
 
+  const partnersSlider = () => {
+    const sliders = document.querySelectorAll('.js-relationship-slider');
+    if (!sliders.length) return;
+
+    sliders.forEach((slider) => {
+      new Swiper(slider, {
+        loop: true,
+        speed: 1500,
+        slidesPerView: 1,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false
+        },
+        pagination: {
+          el: '#bankPagination',
+          clickable: true
+        }
+      });
+    });
+  };
+
   window.WebFontConfig = {
     custom: {
       families: [
@@ -2189,6 +2210,7 @@
   initMobileNavLinks();
   hoverApartment();
   slideKeyvisual();
+  partnersSlider();
   window.addEventListener("load", () => {
     initMarqueeTop();
     initMarqueeBottom();
